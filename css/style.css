@@ -1,0 +1,424 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+}
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+
+ 
+ 
+ 
+ p {
+   font-size: 18px;
+   line-height: 28px;
+ }
+ 
+ * {
+   scroll-behavior: smooth;
+ }
+ 
+ /* Menu code starts here */
+ 
+ #menuToggle
+ {
+   display: block;
+   /* You can also use relative/absolute here if you want to stay on the top */
+   position: fixed;
+   top: 50px;
+   left: 50px;
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #232323;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: tomato;
+ }
+ 
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #cdcdcd;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: absolute;
+   max-width: 400px;
+   width: 100vw;
+   max-height: 100vh;
+   margin: -100px 0 0 -50px;
+   padding: 50px;
+   padding-top: 125px;
+   box-sizing: border-box;
+   overflow-y: auto;
+   background: #ededed;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ #menu li label
+ {
+   cursor: pointer;
+ }
+ 
+ /*
+  * And let's slide it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
+ 
+.cantainer {
+    width: 960px;
+    margin: 0px auto;
+}
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 10px; */
+    height: 65px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    width: 165px;
+    height: 60px;
+}
+.logo:hover{
+    font-size: 20px;
+}
+.logo a{
+    text-decoration: none;
+    color: #000;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.navber{
+    display: flex;
+}
+.navber a {
+    text-decoration: none;
+    font-size: 18px;
+    margin-right: 46px;
+    color: black;
+    font-family: fantasy;
+}
+.navber li{
+    list-style-type: none;
+}
+
+.icons i{
+    margin-right: 15px;
+}
+.banner {
+    background-image: url(../img/Restaurant.jpg);
+    /* padding-top: 75px; */
+    display: flex;
+    justify-content: end;
+    padding: 150px 75px 150px 0px;
+    margin-bottom: 60px;
+    background-size: cover;
+}
+.box h1{
+    color: #B88E2F;
+    font-size: 52px;
+    margin-bottom: 23px;
+    
+}
+.box h5 {
+    font-size: 25px;
+    margin-bottom: 12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.box p{
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+ 
+.box button {
+    padding: 19px 60px 19px 60px;
+    background-color: #B88E2F;
+    color: #fff;
+    border: navajowhite;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+}
+.box {
+    width: 524px;
+    padding: 25px 50px 25px 50px;
+    background-color: antiquewhite;
+}
+.browse h2 {
+    font-size: 80px;
+    margin-bottom: 28px;
+    background-color: aquamarine;
+}
+.browse p{
+    font-size: 20px;
+}
+.browse{
+    margin-bottom: 63px;
+}
+.browse{
+    text-align: center;
+}
+.browse-image{
+    display: flex;
+    justify-content: center;
+}
+.image-one {
+    margin-right: 25px;
+    width: 339px;
+}
+.browse p {
+    margin-bottom: 50px;
+}
+.image-one h3{
+    font-size: 24px;
+    padding: 10px 10px;
+}
+.Our-Products {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.Products-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+    text-align: center;
+}
+.Products-box:hover{
+    border: 3px solid blueviolet;
+    font-size: 10px;
+}
+.Products-images-two {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.show-more button:hover{
+    background-color: #B88E2F;
+}
+.show-more a{
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+}
+
+.Products-box {
+    margin-right: 20px;
+    background-color: #F4F5F7;
+    padding: 10px 10px;
+    width: 204px;
+}
+.Products-box h4{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.Products-box p{
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.Products-box h2{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.show-more button {
+    border: 1px solid  #B88E2F;
+    padding: 18px 60px 18px 60px;
+    margin: 0 auto;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.show-more {
+    /* display: flex; */
+    text-align: center;
+}
+.FuniroFurniture {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.FuniroFurniture h5{
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.FuniroFurniture h2{
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.FuniroFurniture-images {
+    display: flex;
+    border-bottom: 2px solid;
+    margin-bottom: 71px;
+}
+.Funiro-footer {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    border-top: 1px solid blue;
+    padding-top: 60px;
+}
+.Funiro h2 {
+    margin-bottom: 60px;
+    font-size: 24px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.Funiro p{
+    font-size: 16px;
+    color: #9f9f9f;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 20px;
+}
+ .Funiro-links h4{
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 70px;
+ } 
+ .Funiro-links a{
+    font-size: 16px;
+    text-decoration: none;
+ }
+ .Help a{
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+ .Help h3{
+    line-height: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ }
+.Newsletter h6{
+    font-size: 16px;
+    line-height: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.Newsletter a{
+    font-size: 14px;
+}
+
+
+
+/* .tv-image{
+    width: 441px;
+    height: 312px;
+} */

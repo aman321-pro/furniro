@@ -1,0 +1,79 @@
+@media  screen and (max-width:1919px) {
+    .container{
+        width: 1420px;
+    }
+     
+}
+
+@media screen and (max-width:1599px) {
+    .container{
+        width: 1280px;
+    }
+    .FuniroFurniture-images {
+        
+        width: 345px;
+    }
+    .FuniroFurniture-images {
+        width: 281px;
+    }
+    .FuniroFurniture-images {
+        
+        margin-left: 112px; 
+       
+    }
+}
+
+@media screen and (max-width:1349px) {
+    .container{
+        width: 1140px;
+    }
+    .FuniroFurniture-images {
+        width: 230px;
+    }
+    .Funiro-footer {
+        
+        justify-content: space-around;
+    }
+    .head {
+        justify-content: space-around;
+    }
+    .FuniroFurniture-images {
+        margin-block-end: auto;
+    }
+    .banner {
+        
+        background-position: center;
+    }
+    .FuniroFurniture-images {
+        margin-left: 0px;
+    }
+    }
+   
+
+
+
+@media screen and (max-width:1199px) {
+    .container{
+        width: 950px;
+    }
+    .head {
+        justify-content: start;
+    }
+    .logo {
+        
+        margin-right: 39px;
+    }
+    .cantainer {
+        width: 750px;
+        
+    }
+    .head {
+        justify-content: start;
+    }
+}
+@media screen and (max-width:991px) {
+    .container{
+        width: 750px;
+    }
+     
+}
